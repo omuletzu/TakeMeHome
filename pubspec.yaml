@@ -37,6 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_maps_flutter: ^2.6.0
   geolocator: ^7.6.2
+  popover: ^0.3.0
+  fluentui_system_icons: ^1.1.233
+  font_awesome_flutter: ^10.7.0
+
 
 dev_dependencies:
   flutter_test:
