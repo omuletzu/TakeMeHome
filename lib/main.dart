@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
@@ -19,6 +21,8 @@ class _MyAppState extends State<MyApp> {
   var dangers_list = ['item1', 'item2'];
   String dropDownItem = 'item1';
 
+  Set<Circle> _cirle = HashSet<Circle>();
+
   @override
   void initState() {
     super.initState();
@@ -28,6 +32,7 @@ class _MyAppState extends State<MyApp> {
   Future<void> _initMap() async {
     Position position = await _getLocation();
     _mainLocation = LatLng(position.latitude, position.longitude);
+    _addCircle(_mainLocation);
   }
 
   @override
@@ -48,6 +53,7 @@ class _MyAppState extends State<MyApp> {
               zoomControlsEnabled: false,
               myLocationButtonEnabled: false,
               markers: _markers,
+              circles: _cirle,
 
               onTap: (LatLng latLng) {
                 _addMarker(latLng);
@@ -307,6 +313,19 @@ class _MyAppState extends State<MyApp> {
       _locationFetched = true;
     });
     return position;
+  }
+
+  void _addCircle(LatLng latLng){
+    String circle_id = "CircleId ${latLng.latitude} - ${latLng.longitude}";
+
+    Circle circle_new = Circle(
+      circleId: CircleId(circle_id),
+      center: latLng,
+      radius: 75.0,
+      fillColor: Colors.redAccent.withOpacity(0.5)
+    );
+
+    _cirle.add(circle_new);
   }
 
   void _addMarker(LatLng _location) {
