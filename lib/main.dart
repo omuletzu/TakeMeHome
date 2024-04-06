@@ -25,7 +25,6 @@ class _MyAppState extends State<MyApp> {
   Future<void> _initMap() async {
     Position position = await _getLocation();
     _mainLocation = LatLng(position.latitude, position.longitude);
-    _addMarker();
   }
 
   @override
@@ -43,14 +42,10 @@ class _MyAppState extends State<MyApp> {
           compassEnabled: true,
           zoomControlsEnabled: false,
           myLocationButtonEnabled: false,
+          markers: _markers,
 
           onTap: (LatLng latLng){
-            MarkerId mid = _markers.first.mapsId;
-            Marker updated_marker = Marker(
-              markerId: mid,
-              position:latLng,
-              icon: BitmapDescriptor.fromBytes(resizedMarkerImageBytesTemp)
-            );
+            _addMarker(latLng);
           },
 
           onMapCreated: (GoogleMapController controller) {
@@ -85,18 +80,21 @@ class _MyAppState extends State<MyApp> {
     return position;
   }
 
-  void _addMarker() {
-    _markers.add(
-      Marker(
-        markerId: MarkerId(_mainLocation.toString()),
-        position: _mainLocation,
+  void _addMarker(LatLng _location) {
+    Marker marker = Marker(
+        markerId: MarkerId(_location.toString()),
+        position: _location,
         infoWindow: InfoWindow(
           title: 'Historical City',
           snippet: '5 Star Rating',
         ),
         icon: BitmapDescriptor.defaultMarker,
-      ),
-    );
-    setState(() {});
+      );
+
+    setState(() {
+      _markers.clear();
+      _markers.add(marker);
+      print(_markers.first.position);
+    });
   }
 }
