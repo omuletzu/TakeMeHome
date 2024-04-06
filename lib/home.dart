@@ -10,15 +10,23 @@ String retstr = "null";
 
 tst() async{
   var ret = await db_wr().getData();
-  String retStr = "";
-  ret((item) => {
-    retStr += item.toString()
-  });
+  print(ret);
+  retstr = "";
+  for(int i = 0; i < ret.length; i++){
+    retstr += "${ret[i]}\n";
+  }
+
+  return retstr;
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +50,6 @@ class HomePage extends StatelessWidget {
               },
               child: Text("write"),
             ),
-            TextField( ),
           ],
         ),
       ),
