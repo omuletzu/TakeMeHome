@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:take_me_home_auth/firebase_auth_methods.dart';
 import 'package:take_me_home_auth/form_container.dart';
 import 'package:take_me_home_auth/global/common/toast.dart';
-import 'package:take_me_home_auth/home.dart';
+import 'package:take_me_home_auth/main.dart';
 import 'package:take_me_home_auth/sign_up_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
             onPressed: () {
               Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
+                  MaterialPageRoute(builder: (context) => MainPage()),
                   (route) => false);
             },
           ),
@@ -186,7 +186,7 @@ class _LoginPageState extends State<LoginPage> {
         // Navigate to the home page and pass user data if needed
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const HomePage()),
+          MaterialPageRoute(builder: (context) => const MainPage()),
         );
       } else {
         // User document does not exist in Firestore

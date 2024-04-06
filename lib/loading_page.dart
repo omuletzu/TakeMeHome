@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:take_me_home_auth/home.dart';
+import 'package:take_me_home_auth/main.dart';
+import 'package:take_me_home_auth/map.dart';
 import 'package:take_me_home_auth/sign_up_page.dart';
 
 class LoadingScreen extends StatefulWidget {
@@ -28,7 +29,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
       // User is logged in, navigate to home page
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => MyMapPage()),
       );
     } else {
       // User is not logged in, navigate to sign up page

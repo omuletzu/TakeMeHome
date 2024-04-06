@@ -6,7 +6,7 @@ import 'package:take_me_home_auth/global/common/toast.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:take_me_home_auth/home.dart';
+import 'package:take_me_home_auth/main.dart';
 import 'package:take_me_home_auth/login.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -42,7 +42,7 @@ class _SignUpPageState extends State<SignUpPage> {
           onPressed: () {
             Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (context) => HomePage()),
+                MaterialPageRoute(builder: (context) => MainPage()),
                 (route) => false);
           },
         ),
@@ -194,7 +194,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
       // Navigate to the home page
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomePage()));
+          context, MaterialPageRoute(builder: (context) => MainPage()));
 
       // Show success message
       showToast(message: "User successfully created");

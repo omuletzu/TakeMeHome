@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:take_me_home_auth/home.dart';
+import 'package:take_me_home_auth/main.dart';
 import 'package:take_me_home_auth/loading_page.dart';
 
 class SplashScreen extends StatefulWidget {
