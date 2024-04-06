@@ -34,136 +34,137 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(
-              Icons.arrow_back,
-            ),
-            onPressed: () {
-              Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                  (route) => false);
-            },
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
           ),
-          title: Text(
-            "Sign Up",
-            style: GoogleFonts.openSans(
-              textStyle: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w800,
-              ),
-            ),
-          ),
-          backgroundColor: Colors.grey[800],
+          onPressed: () {
+            Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()),
+                (route) => false);
+          },
         ),
-        backgroundColor: Colors.grey[800],
-        body: Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text("Sign Up",
-                  style: GoogleFonts.openSans(
-                    textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w800,
-                      fontSize: 32,
-                    ),
-                  )),
-              const SizedBox(
-                height: 30,
-              ),
-              FormContainerWidget(
-                controller: _nameController,
-                hintText: "Your Full Name",
-                isPasswordField: false,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              FormContainerWidget(
-                controller: _emailController,
-                hintText: "Email",
-                isPasswordField: false,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              FormContainerWidget(
-                controller: _passwordController,
-                hintText: "Password",
-                isPasswordField: true,
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              GestureDetector(
-                onTap: () {
-                  _signUp();
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: 45,
-                  decoration: BoxDecoration(
-                    color: Colors.greenAccent.shade100,
-                    borderRadius: BorderRadius.circular(10),
+        title: Text(
+          "Take Me Home",
+          style: GoogleFonts.openSans(
+            textStyle: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w800,
+            ),
+          ),
+        ),
+        backgroundColor: Colors.white,
+      ),
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 15),
+        child: SingleChildScrollView(
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Text("\n\n\nSign Up",
+                style: GoogleFonts.openSans(
+                  textStyle: const TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 32,
                   ),
-                  child: Center(
-                    child: isSigningUp
-                        ? CircularProgressIndicator(color: Colors.white)
-                        : Text(
-                            "Sign up",
-                            style: GoogleFonts.openSans(
-                              textStyle: const TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w800,
-                              ),
+                )),
+            const SizedBox(
+              height: 30,
+            ),
+            FormContainerWidget(
+              controller: _nameController,
+              hintText: "Your Full Name",
+              isPasswordField: false,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            FormContainerWidget(
+              controller: _emailController,
+              hintText: "Email",
+              isPasswordField: false,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            FormContainerWidget(
+              controller: _passwordController,
+              hintText: "Password",
+              isPasswordField: true,
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            GestureDetector(
+              onTap: () {
+                _signUp();
+              },
+              child: Container(
+                width: double.infinity,
+                height: 45,
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(237, 76, 111, 1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(
+                  child: isSigningUp
+                      ? CircularProgressIndicator(
+                          color: Color.fromRGBO(237, 76, 111, 1))
+                      : Text(
+                          "Sign up",
+                          style: GoogleFonts.openSans(
+                            textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w800,
                             ),
                           ),
-                  ),
+                        ),
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Already have an account?",
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Already have an account?",
+                  style: GoogleFonts.openSans(
+                    textStyle: const TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
+                        (route) => false);
+                  },
+                  child: Text(
+                    "Login",
                     style: GoogleFonts.openSans(
-                      textStyle: const TextStyle(
-                        color: Colors.white,
+                      textStyle: TextStyle(
+                        color: Color.fromRGBO(237, 76, 111, 1),
                         fontWeight: FontWeight.w800,
                       ),
                     ),
                   ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushAndRemoveUntil(
-                          context,
-                          MaterialPageRoute(builder: (context) => LoginPage()),
-                          (route) => false);
-                    },
-                    child: Text(
-                      "Login",
-                      style: GoogleFonts.openSans(
-                        textStyle: TextStyle(
-                          color: Colors.greenAccent.shade100,
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              )
-            ]),
-          ),
-        ));
+                )
+              ],
+            )
+          ]),
+        ),
+      ),
+    );
   }
 
   void _signUp() async {
@@ -174,6 +175,7 @@ class _SignUpPageState extends State<SignUpPage> {
     String name = _nameController.text;
     String email = _emailController.text;
     String password = _passwordController.text;
+    email = email.replaceAll(" ", "");
 
     // Sign up the user with email and password
     User? user = await _auth.signUpWithEmailAndPassword(email, password);

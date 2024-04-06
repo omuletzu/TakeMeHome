@@ -44,17 +44,17 @@ class _LoginPageState extends State<LoginPage> {
             },
           ),
           title: Text(
-            "Login",
+            "Take Me Home",
             style: GoogleFonts.openSans(
               textStyle: const TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.w800,
               ),
             ),
           ),
-          backgroundColor: Colors.grey[800],
+          backgroundColor: Colors.white,
         ),
-        backgroundColor: Colors.grey[800],
+        backgroundColor: Colors.white,
         body: Center(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 15),
@@ -63,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
               Text("Login",
                   style: GoogleFonts.openSans(
                     textStyle: const TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontWeight: FontWeight.w800,
                       fontSize: 32,
                     ),
@@ -93,17 +93,18 @@ class _LoginPageState extends State<LoginPage> {
                   width: double.infinity,
                   height: 45,
                   decoration: BoxDecoration(
-                    color: Colors.greenAccent.shade100,
+                    color: Color.fromRGBO(237, 76, 111, 1),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
                       child: isSigningIn
-                          ? CircularProgressIndicator(color: Colors.white)
+                          ? CircularProgressIndicator(
+                              color: Color.fromRGBO(237, 76, 111, 1))
                           : Text(
                               "Login",
                               style: GoogleFonts.openSans(
                                 textStyle: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.white,
                                   fontWeight: FontWeight.w800,
                                 ),
                               ),
@@ -120,7 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                     "Don't have an account?",
                     style: GoogleFonts.openSans(
                       textStyle: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontWeight: FontWeight.w800,
                       ),
                     ),
@@ -139,7 +140,7 @@ class _LoginPageState extends State<LoginPage> {
                       "Sign Up",
                       style: GoogleFonts.openSans(
                         textStyle: TextStyle(
-                          color: Colors.greenAccent.shade100,
+                          color: Color.fromRGBO(237, 76, 111, 1),
                           fontWeight: FontWeight.w800,
                         ),
                       ),

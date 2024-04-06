@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:take_me_home_auth/firebase_options.dart';
 import 'package:take_me_home_auth/sign_up_page.dart';
+import 'package:take_me_home_auth/splash_screen_test.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -39,6 +40,6 @@ void main() async {
   );
 
   runApp(MaterialApp(
-    home: HomePage(),
+    home: SplashScreen(),
   ));
 }
