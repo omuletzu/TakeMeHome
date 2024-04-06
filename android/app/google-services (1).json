@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "320779246500",
+    "project_id": "takemehome-67668",
+    "storage_bucket": "takemehome-67668.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320779246500:android:73673ff5b50bfaf48c7f31",
+        "android_client_info": {
+          "package_name": "com.example.take_me_home_auth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWtbIQOt2YJteBaU7Are7xv9iBsAb73ho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
