@@ -21,18 +21,18 @@ class _LoadingScreenState extends State<LoadingScreen> {
   Future<void> checkUserLoggedIn() async {
     await Future.delayed(Duration(seconds: 1));
 
-    // Check if user is logged in
+    //verificam daca utilizatorul este logat
 
     var user = FirebaseAuth.instance.currentUser;
 
     if (user != null) {
-      // User is logged in, navigate to home page
+      // Utilizatorul este logat , mergem la pagina principala(harta)
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => MyMapPage()),
       );
     } else {
-      // User is not logged in, navigate to sign up page
+      // Utilizatorul nu este logat , mergem la sign up page
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => SignUpPage()),
@@ -44,7 +44,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: CircularProgressIndicator(), // Show a loading indicator
+        child: CircularProgressIndicator(),
       ),
     );
   }

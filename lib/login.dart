@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:take_me_home_auth/firebase_auth_methods.dart';
 import 'package:take_me_home_auth/form_container.dart';
 import 'package:take_me_home_auth/global/common/toast.dart';
+import 'package:take_me_home_auth/loading_page.dart';
 import 'package:take_me_home_auth/main.dart';
 import 'package:take_me_home_auth/sign_up_page.dart';
 
@@ -39,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
             onPressed: () {
               Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => MainPage()),
+                  MaterialPageRoute(builder: (context) => LoadingScreen()),
                   (route) => false);
             },
           ),
@@ -170,26 +171,22 @@ class _LoginPageState extends State<LoginPage> {
     if (user != null) {
       showToast(message: "User successfully signed in");
 
-      // Fetch user data from Firestore based on user's UID
+      //extragem informatii pe baza uid
       DocumentSnapshot userDoc = await FirebaseFirestore.instance
           .collection('users')
           .doc(user.uid)
           .get();
       if (userDoc.exists) {
-        // User document exists in Firestore
-        // Retrieve user data
+        // daca documentul utilizatorului exista atunci extragem informatii
         String name = userDoc.get('name');
         String userEmail = userDoc.get('email');
 
-        // You can retrieve other user details similarly
-
-        // Navigate to the home page and pass user data if needed
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const MainPage()),
+          MaterialPageRoute(builder: (context) => const LoadingScreen()),
         );
       } else {
-        // User document does not exist in Firestore
+        // documentul utilizatorului nu exista in baza de date
         showToast(message: "User data not found");
       }
     } else {
