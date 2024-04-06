@@ -1,7 +1,20 @@
+import 'dart:ffi';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:take_me_home_auth/db_rw.dart';
 import 'package:take_me_home_auth/firebase_options.dart';
 import 'package:take_me_home_auth/sign_up_page.dart';
+
+String retstr = "null";
+
+tst() async{
+  var ret = await db_wr().getData();
+  String retStr = "";
+  ret((item) => {
+    retStr += item.toString()
+  });
+}
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,13 +31,18 @@ class HomePage extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SignUpPage()),
-                );
+                tst();
               },
-              child: Text("Go to Sign Up Page"),
+              child: Text("read"),
             ),
+            Text(retstr),
+            ElevatedButton(
+              onPressed: () {
+                db_wr().sendData("1", "2");
+              },
+              child: Text("write"),
+            ),
+            TextField( ),
           ],
         ),
       ),
