@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+       
+    }
+}
+
+>>>>>>> 46af6a7 (updated distance)
 allprojects {
     repositories {
         google()

@@ -27,7 +27,11 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
   FlutterWindow window(project);
   Win32Window::Point origin(10, 10);
   Win32Window::Size size(1280, 720);
+<<<<<<< HEAD
   if (!window.Create(L"take_me_home", origin, size)) {
+=======
+  if (!window.Create(L"take_me_home_auth", origin, size)) {
+>>>>>>> 46af6a7 (updated distance)
     return EXIT_FAILURE;
   }
   window.SetQuitOnClose(true);

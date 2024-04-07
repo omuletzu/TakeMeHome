@@ -8,7 +8,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+<<<<<<< HEAD
 import 'package:take_me_home/main.dart';
+=======
+import 'package:take_me_home_auth/main.dart';
+>>>>>>> 46af6a7 (updated distance)
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
