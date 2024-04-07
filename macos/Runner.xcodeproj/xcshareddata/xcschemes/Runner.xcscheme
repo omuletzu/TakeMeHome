@@ -15,11 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "33CC10EC2044A3C60003C045"
-<<<<<<< HEAD
-               BuildableName = "take_me_home.app"
-=======
                BuildableName = "take_me_home_auth.app"
->>>>>>> 46af6a7 (updated distance)
                BlueprintName = "Runner"
                ReferencedContainer = "container:Runner.xcodeproj">
             </BuildableReference>
@@ -35,11 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "33CC10EC2044A3C60003C045"
-<<<<<<< HEAD
-            BuildableName = "take_me_home.app"
-=======
             BuildableName = "take_me_home_auth.app"
->>>>>>> 46af6a7 (updated distance)
             BlueprintName = "Runner"
             ReferencedContainer = "container:Runner.xcodeproj">
          </BuildableReference>
@@ -73,11 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "33CC10EC2044A3C60003C045"
-<<<<<<< HEAD
-            BuildableName = "take_me_home.app"
-=======
             BuildableName = "take_me_home_auth.app"
->>>>>>> 46af6a7 (updated distance)
             BlueprintName = "Runner"
             ReferencedContainer = "container:Runner.xcodeproj">
          </BuildableReference>
@@ -94,11 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "33CC10EC2044A3C60003C045"
-<<<<<<< HEAD
-            BuildableName = "take_me_home.app"
-=======
             BuildableName = "take_me_home_auth.app"
->>>>>>> 46af6a7 (updated distance)
             BlueprintName = "Runner"
             ReferencedContainer = "container:Runner.xcodeproj">
          </BuildableReference>

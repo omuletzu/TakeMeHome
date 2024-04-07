@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
-    "name": "take_me_home",
-    "short_name": "take_me_home",
-=======
     "name": "take_me_home_auth",
     "short_name": "take_me_home_auth",
->>>>>>> 46af6a7 (updated distance)
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
