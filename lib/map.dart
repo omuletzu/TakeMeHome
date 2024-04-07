@@ -3,7 +3,6 @@ import 'dart:collection';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -23,10 +22,7 @@ class _MyMapPageState extends State<MyMapPage> {
   late GoogleMapController _controller;
   LatLng _mainLocation = LatLng(45.809, 21.2197);
 
-  var dangers_list = ['item1', 'item2'];
-  String dropDownItem = 'item1';
-
-  Set<Circle> _cirle = HashSet<Circle>();
+  Set<Circle> _circle = HashSet<Circle>();
 
   @override
   void initState() {
@@ -45,10 +41,26 @@ class _MyMapPageState extends State<MyMapPage> {
         await _firestore.collection('waypoints').get();
     querySnapshot.docs.forEach((DocumentSnapshot document) {
       Map<String, dynamic> data = document.data() as Map<String, dynamic>;
-      double latitude = data['latitude'];
-      double longitude = data['longitude'];
-      LatLng location = LatLng(latitude, longitude);
-      _addCircle(location);
+
+      Timestamp creation_date_timestamp = data['creation_date'];
+      DateTime creation_date = creation_date_timestamp.toDate();
+      Duration difference = DateTime.now().difference(creation_date);
+
+      if (difference.inDays <= 7) {
+        String tip_pericol = data['tip_pericol'];
+        double latitude = data['latitude'];
+        double longitude = data['longitude'];
+        LatLng location = LatLng(latitude, longitude);
+
+        _addCircle(location);
+        _addMarker(location, tip_pericol, false);
+      } else {
+        try {
+          document.reference.delete();
+        } catch (e) {
+          print('Could not delete document: $e');
+        }
+      }
     });
     setState(() {
       _locationFetched = true;
@@ -73,11 +85,11 @@ class _MyMapPageState extends State<MyMapPage> {
                           zoom: 15,
                         ),
                         myLocationEnabled: true,
-                        compassEnabled: true,
+                        compassEnabled: false,
                         zoomControlsEnabled: false,
                         myLocationButtonEnabled: false,
                         markers: _markers,
-                        circles: _cirle,
+                        circles: _circle,
                         onTap: (LatLng latLng) {
                           showDialog(
                               context: context,
@@ -112,8 +124,10 @@ class _MyMapPageState extends State<MyMapPage> {
                                                             splashColor: Colors
                                                                 .green, // splash color
                                                             onTap: () {
-                                                              _addMarker(latLng,
-                                                                  "Comunitar");
+                                                              _addMarker(
+                                                                  latLng,
+                                                                  "Comunitar",
+                                                                  true);
                                                               Navigator.of(
                                                                       context)
                                                                   .pop();
@@ -164,8 +178,10 @@ class _MyMapPageState extends State<MyMapPage> {
                                                             splashColor: Colors
                                                                 .green, // splash color
                                                             onTap: () {
-                                                              _addMarker(latLng,
-                                                                  "Animale");
+                                                              _addMarker(
+                                                                  latLng,
+                                                                  "Animale",
+                                                                  true);
                                                               Navigator.of(
                                                                       context)
                                                                   .pop();
@@ -214,8 +230,10 @@ class _MyMapPageState extends State<MyMapPage> {
                                                             splashColor: Colors
                                                                 .green, // splash color
                                                             onTap: () {
-                                                              _addMarker(latLng,
-                                                                  "Incendiu");
+                                                              _addMarker(
+                                                                  latLng,
+                                                                  "Incendiu",
+                                                                  true);
                                                               Navigator.of(
                                                                       context)
                                                                   .pop();
@@ -242,6 +260,10 @@ class _MyMapPageState extends State<MyMapPage> {
                                                     )
                                                   ],
                                                 ),
+                                                const Padding(
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                            horizontal: 5.0)),
                                                 Column(
                                                   // pericol animale
                                                   children: [
@@ -260,8 +282,10 @@ class _MyMapPageState extends State<MyMapPage> {
                                                             splashColor: Colors
                                                                 .green, // splash color
                                                             onTap: () {
-                                                              _addMarker(latLng,
-                                                                  "Rutier");
+                                                              _addMarker(
+                                                                  latLng,
+                                                                  "Rutier",
+                                                                  true);
                                                               Navigator.of(
                                                                       context)
                                                                   .pop();
@@ -310,8 +334,10 @@ class _MyMapPageState extends State<MyMapPage> {
                                                             splashColor: Colors
                                                                 .green, // splash color
                                                             onTap: () {
-                                                              _addMarker(latLng,
-                                                                  "Inselatorie");
+                                                              _addMarker(
+                                                                  latLng,
+                                                                  "Inselatorie",
+                                                                  true);
                                                               Navigator.of(
                                                                       context)
                                                                   .pop();
@@ -361,8 +387,10 @@ class _MyMapPageState extends State<MyMapPage> {
                                                             splashColor: Colors
                                                                 .green, // splash color
                                                             onTap: () {
-                                                              _addMarker(latLng,
-                                                                  "Violenta");
+                                                              _addMarker(
+                                                                  latLng,
+                                                                  "Violenta",
+                                                                  true);
                                                               Navigator.of(
                                                                       context)
                                                                   .pop();
@@ -482,7 +510,7 @@ class _MyMapPageState extends State<MyMapPage> {
   void _addCircle(LatLng latLng) {
     String circle_id = "CircleId ${latLng.latitude} - ${latLng.longitude}";
 
-    _cirle.add(Circle(
+    _circle.add(Circle(
         circleId: CircleId(circle_id),
         center: latLng,
         radius: 75.0,
@@ -490,10 +518,7 @@ class _MyMapPageState extends State<MyMapPage> {
         strokeColor: Colors.transparent));
   }
 
-  void _addMarker(
-    LatLng location,
-    String tip_pericol,
-  ) {
+  void _addMarker(LatLng location, String tip_pericol, bool new_pinPoint) {
     Marker marker = Marker(
       markerId: MarkerId(location.toString()),
       position: location,
@@ -506,14 +531,16 @@ class _MyMapPageState extends State<MyMapPage> {
 
     // Adaugam marker
     setState(() {
-      _markers.clear();
       _markers.add(marker);
     });
 
     // adaugam coordonatele la baza de date
     _addCircle(LatLng(location.latitude, location.longitude));
-    _addCoordinatesToFirestore(
-        location.latitude, location.longitude, tip_pericol);
+
+    if (new_pinPoint == true) {
+      _addCoordinatesToFirestore(
+          location.latitude, location.longitude, tip_pericol);
+    }
   }
 
   // functie care adauga coordonate , data crearii si tipul pericolului
