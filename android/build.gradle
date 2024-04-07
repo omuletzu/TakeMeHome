@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+       
+    }
+}
+
+>>>>>>> a17c959 (firebase update corrected)
 allprojects {
     repositories {
         google()

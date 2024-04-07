@@ -64,7 +64,11 @@
 		331C80D7294CF71000263BE5 /* RunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
 		333000ED22D3DE5D00554162 /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
 		335BBD1A22A9A15E00E9071D /* GeneratedPluginRegistrant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedPluginRegistrant.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		33CC10ED2044A3C60003C045 /* take_me_home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "take_me_home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+=======
+		33CC10ED2044A3C60003C045 /* take_me_home_auth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "take_me_home_auth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+>>>>>>> a17c959 (firebase update corrected)
 		33CC10F02044A3C60003C045 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33CC10F22044A3C60003C045 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Runner/Assets.xcassets; sourceTree = "<group>"; };
 		33CC10F52044A3C60003C045 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -131,7 +135,11 @@
 		33CC10EE2044A3C60003C045 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				33CC10ED2044A3C60003C045 /* take_me_home.app */,
+=======
+				33CC10ED2044A3C60003C045 /* take_me_home_auth.app */,
+>>>>>>> a17c959 (firebase update corrected)
 				331C80D5294CF71000263BE5 /* RunnerTests.xctest */,
 			);
 			name = Products;
@@ -217,7 +225,11 @@
 			);
 			name = Runner;
 			productName = Runner;
+<<<<<<< HEAD
 			productReference = 33CC10ED2044A3C60003C045 /* take_me_home.app */;
+=======
+			productReference = 33CC10ED2044A3C60003C045 /* take_me_home_auth.app */;
+>>>>>>> a17c959 (firebase update corrected)
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -385,10 +397,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.takeMeHome.RunnerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/take_me_home.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/take_me_home";
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.takeMeHomeAuth.RunnerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/take_me_home_auth.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/take_me_home_auth";
+>>>>>>> a17c959 (firebase update corrected)
 			};
 			name = Debug;
 		};
@@ -399,10 +418,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.takeMeHome.RunnerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/take_me_home.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/take_me_home";
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.takeMeHomeAuth.RunnerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/take_me_home_auth.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/take_me_home_auth";
+>>>>>>> a17c959 (firebase update corrected)
 			};
 			name = Release;
 		};
@@ -413,10 +439,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.takeMeHome.RunnerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/take_me_home.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/take_me_home";
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.takeMeHomeAuth.RunnerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/take_me_home_auth.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/take_me_home_auth";
+>>>>>>> a17c959 (firebase update corrected)
 			};
 			name = Profile;
 		};

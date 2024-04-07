@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: take_me_home
+=======
+name: take_me_home_auth
+>>>>>>> a17c959 (firebase update corrected)
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -35,6 +39,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
+<<<<<<< HEAD
   google_maps_flutter: ^2.6.0
   geolocator: ^7.6.2
   popover: ^0.3.0
@@ -46,6 +51,33 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+=======
+  firebase_core: ^2.28.0
+  animate_gradient: ^0.0.2+1
+  google_fonts: ^6.1.0
+  cloud_firestore: ^4.15.4
+  firebase_auth: ^4.17.4
+  firebase_storage: ^11.6.5
+  fluttertoast: ^8.2.4
+  google_sign_in: ^6.2.1
+  font_awesome_flutter: ^10.7.0
+  google_maps_flutter: ^2.6.0
+  geolocator: ^11.0.0
+  flutter_launcher_icons: ^0.13.1
+
+dev_dependencies:
+  flutter_launcher_icons: "^0.13.1"
+  flutter_test:
+    sdk: flutter
+
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/app_logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+
+>>>>>>> a17c959 (firebase update corrected)
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -58,15 +90,26 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+<<<<<<< HEAD
 
+=======
+  assets:
+  - assets/
+>>>>>>> a17c959 (firebase update corrected)
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
+<<<<<<< HEAD
   assets:
   #   - app/map_style
+=======
+  # assets:
+  #   - images/a_dot_burr.jpeg
+  #   - images/a_dot_ham.jpeg
+>>>>>>> a17c959 (firebase update corrected)
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

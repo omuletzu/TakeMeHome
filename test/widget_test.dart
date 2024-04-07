@@ -8,7 +8,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+<<<<<<< HEAD
 import 'package:take_me_home/main.dart';
+=======
+import 'package:take_me_home_auth/main.dart';
+>>>>>>> a17c959 (firebase update corrected)
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {

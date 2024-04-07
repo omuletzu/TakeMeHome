@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # take_me_home
+=======
+# take_me_home_auth
+>>>>>>> a17c959 (firebase update corrected)
 
 A new Flutter project.
 

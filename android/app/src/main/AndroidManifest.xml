@@ -1,8 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
+<<<<<<< HEAD
         android:label="take_me_home"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+=======
+        android:label="take_me_home_auth"
+        android:name="${applicationName}"
+        android:icon="@mipmap/launcher_icon">
+>>>>>>> a17c959 (firebase update corrected)
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -30,10 +36,16 @@
             android:name="flutterEmbedding"
             android:value="2" />
 
+<<<<<<< HEAD
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCZq2xU7Itsuj6wRqxtK9Wp5jI1Octrldw" />
 
+=======
+           <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCZq2xU7Itsuj6wRqxtK9Wp5jI1Octrldw" />
+>>>>>>> a17c959 (firebase update corrected)
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility?hl=en and

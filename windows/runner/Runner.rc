@@ -90,12 +90,21 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
+<<<<<<< HEAD
             VALUE "FileDescription", "take_me_home" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "take_me_home" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
             VALUE "OriginalFilename", "take_me_home.exe" "\0"
             VALUE "ProductName", "take_me_home" "\0"
+=======
+            VALUE "FileDescription", "take_me_home_auth" "\0"
+            VALUE "FileVersion", VERSION_AS_STRING "\0"
+            VALUE "InternalName", "take_me_home_auth" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
+            VALUE "OriginalFilename", "take_me_home_auth.exe" "\0"
+            VALUE "ProductName", "take_me_home_auth" "\0"
+>>>>>>> a17c959 (firebase update corrected)
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
